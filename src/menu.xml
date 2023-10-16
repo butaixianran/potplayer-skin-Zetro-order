@@ -1,0 +1,139 @@
+﻿<!-- 自定义菜单 Begin -->
+<Menu>
+	<!-- 打开方式 -->
+	<UserMenu Name="OpenMenu" >
+		<MenuItem CmdID="ID_OPEN_FILE" />
+		<MenuItem CmdID="ID_OPEN_URL" />
+		<MenuItem CmdID="ID_OPEN_FOLDER" />
+		<MenuItem CmdID="ID_OPEN_DVD" />
+	</UserMenu>
+	<!-- 杂项菜单 -->
+	<UserMenu Name="MoreToolsMenu" >
+		<MenuItem CmdID="ID_CAPTION_OPEN" />
+		<MenuItem CmdID="ID_CAPTION_VISIBLE" />
+		<SubMenu Name="字幕控制" >
+			<MenuItem CmdID="ID_CAPTION_EXPLORER" />
+			<MenuItem CmdID="" />
+			<MenuItem CmdID="CMD_POPUPMENU_CAPTION_SYNC" NoSubMenu="1" />
+		</SubMenu>
+		<MenuItem CmdID="" />
+		<MenuItem CmdID="CMD_POPUPMENU_CAPTION_LANG" />
+		<MenuItem CmdID="CMD_POPUPMENU_AUDIO_LANG" />
+		<MenuItem CmdID="" />
+		<MenuItem CmdID="ID_VIDEO_IMAGE_COPY" />
+		<MenuItem CmdID="ID_VIDEO_IMAGE_CAPTURE" />
+		<SubMenu Name="更多截图" >
+			<MenuItem CmdID="ID_VIDEO_IMAGE_COPY_SIZE" />
+			<MenuItem CmdID="ID_VIDEO_IMAGE_CAPTURE_PROMPT" />
+			<MenuItem CmdID="ID_VIDEO_IMAGE_CAPTURE_PROMPT_SIZE" />
+			<MenuItem CmdID="" />
+			<MenuItem CmdID="ID_VIDEO_IMAGE_THUMBNAIL" />
+			<MenuItem CmdID="ID_VIDEO_ADV_CAPTURE" />
+			<MenuItem CmdID="ID_SAVE_MOVIE" />
+			<MenuItem CmdID="" />
+			<MenuItem CmdID="ID_VIDEO_OPEN_FOLDER" />
+		</SubMenu>
+	</UserMenu>
+	<!-- 截图菜单 -->
+	<UserMenu Name="CaptureMenu" >
+		<MenuItem CmdID="ID_VIDEO_IMAGE_COPY" />
+		<MenuItem CmdID="ID_VIDEO_IMAGE_CAPTURE_PROMPT" />
+		<MenuItem CmdID="" />
+		<MenuItem CmdID="ID_VIDEO_IMAGE_COPY_SIZE" />
+		<MenuItem CmdID="ID_VIDEO_IMAGE_CAPTURE_PROMPT_SIZE" />
+		<MenuItem CmdID="" />
+		<MenuItem CmdID="ID_VIDEO_IMAGE_THUMBNAIL" />
+		<MenuItem CmdID="ID_VIDEO_ADV_CAPTURE" />
+		<MenuItem CmdID="ID_SAVE_MOVIE" />
+		<MenuItem CmdID="" />
+		<MenuItem CmdID="ID_VIDEO_OPEN_FOLDER" />
+	</UserMenu>
+	<!-- 字幕菜单 -->
+	<UserMenu Name="CaptionMenu" >
+		<MenuItem CmdID="ID_CAPTION_OPEN" />
+		<MenuItem CmdID="ID_CAPTION_VISIBLE" />
+		<MenuItem CmdID="" />
+		<MenuItem CmdID="CMD_POPUPMENU_CAPTION_LANG" />
+		<MenuItem CmdID="CMD_POPUPMENU_AUDIO_LANG" />
+		<MenuItem CmdID="" />
+		<MenuItem CmdID="ID_CAPTION_EXPLORER" />
+		<MenuItem CmdID="CMD_POPUPMENU_CAPTION_SYNC" />
+	</UserMenu>
+	<!-- 均衡器 -->
+	<UserMenu Name="EQMenu" >
+		<MenuItem CmdID="ID_AUDIO_EQULIZER" />
+		<MenuItem CmdID="" />
+		<MenuItem CmdID="CMD_POPUPMENU_AUDIO_EQULIZER" NoSubMenu="1" />
+	</UserMenu>
+	<!-- 播放列表 - 添加 -->
+	<UserMenu Name="AddMenu" >
+		<MenuItem CmdID="ID_PLAYLIST_FILE_ADD" />
+		<MenuItem CmdID="ID_PLAYLIST_FOLDER_ADD" />
+		<MenuItem CmdID="ID_PLAYLIST_URL_ADD" />
+		<MenuItem CmdID="" />
+		<MenuItem CmdID="ID_PLAYLIST_FIND_FILE" />
+	</UserMenu>
+	<!-- 播放模式 -->
+	<UserMenu Name="PlayModeMenu" >
+		<MenuItem CmdID="ID_PLAYBACK_REPEAT_NONE" />
+		<MenuItem CmdID="ID_PLAYBACK_REPEAT_ALL" />
+		<MenuItem CmdID="ID_PLAYBACK_REPEAT_ONE" />
+		<MenuItem CmdID="" />
+		<MenuItem CmdID="ID_PLAYBACK_SHUFFLE" />
+	</UserMenu>
+	<!-- 收藏菜单 -->
+	<UserMenu Name="FavoriteMenu" >
+		<MenuItem CmdID="CMD_POPUPMENU_FAVORITE" NoSubMenu="1" />
+		<MenuItem CmdID="" />
+		<MenuItem CmdID="ID_PLAYLIST_OPEN" />
+		<MenuItem CmdID="ID_PLAYLIST_SAVE" />
+	</UserMenu>
+	<!-- 选择字幕 -->
+	<UserMenu Name="CaptionSelMenu" >
+		<MenuItem CmdID="ID_CAPTION_VISIBLE" />
+		<MenuItem CmdID="" />
+		<MenuItem CmdID="CMD_POPUPMENU_CAPTION_LANG" NoSubMenu="1" />
+	</UserMenu>
+	<!-- 保存字幕 -->
+	<UserMenu Name="CaptionSaveMenu" >
+		<MenuItem CmdID="ID_CAPTION_SAVE_SYNC" />
+		<MenuItem CmdID="ID_CAPTION_SAVEAS" />
+		<MenuItem CmdID="ID_CAPTION_SAVE_MOVIE" />
+		<MenuItem CmdID="" />
+		<MenuItem CmdID="ID_CAPTION_EXPLORER" />
+	</UserMenu>
+</Menu>
+<!-- 自定义菜单 End -->
+<!-- 色彩主题 Begin -->
+<ColorTheme>
+ 	 <ColorThemeYUV Name='YUV 灰色' Sat='0' Hue='0' />
+	 <ColorThemeYUV Name='YUV 雅黑' Sat='-10' Hue='-100' />
+	 <ColorThemeYUV Name='YUV 深紫' Sat='-100' Hue='100' />
+	 <ColorThemeYUV Name='YUV 深蓝' Sat='100' Hue='-50' />
+	 <ColorThemeYUV Name='YUV 深黄' Sat='150' Hue='150' />
+	 <ColorThemeYUV Name='YUV 暗绿' Sat='50' Hue='50' />
+	 <ColorThemeYUV Name='YUV 暗红' Sat='100' Hue='-150' />
+	 <ColorThemeYUV Name='YUV 亮褐' Sat='100' Hue='-180' />
+	 <ColorThemeYUV Name='YUV 亮蓝' Sat='100' Hue='-10' />
+ 	 <ColorThemeYUV Name='YUV 深绿' Sat='100' Hue='65' />
+ 	 <ColorThemeYUV Name='YUV 褐色' Sat='100' Hue='180' />
+ 	 <ColorThemeYUV Name='YUV 纯绿' Sat='100' Hue='100' />
+ 	 <ColorThemeYUV Name='YUV 中蓝' Sat='140' Hue='0' />
+ 	 <ColorThemeYUV Name='YUV 朦灰' Sat='30' Hue='0' />
+ 	 <ColorThemeYUV Name='YUV 沉紫' Sat='-50' Hue='50' />
+ 	 <ColorThemeYUV Name='YUV 沉黄' Sat='50' Hue='130' />
+	<ColorThemeRGB Name="RGB 暗灰" Red="-100" Green="-100" Blue="-100" />
+	<ColorThemeRGB Name="RGB 浅灰" Red="-60" Green="-60" Blue="-60" />
+	<ColorThemeRGB Name="RGB 高亮" Red="50" Green="50" Blue="50" />
+	<ColorThemeRGB Name="RGB 粉红" Red="100" Green="20" Blue="50" />
+	<ColorThemeRGB Name="RGB 胭紅" Red="80" Green="0" Blue="0" />
+	<ColorThemeRGB Name="RGB 淡黄" Red="20" Green="50" Blue="-20" />
+	<ColorThemeRGB Name="RGB 柠黄" Red="100" Green="25" Blue="-30" />
+	<ColorThemeRGB Name="RGB 翠绿" Red="25" Green="100" Blue="-30" />
+	<ColorThemeRGB Name="RGB 嫩绿" Red="0" Green="55" Blue="0" />
+	<ColorThemeRGB Name="RGB 青蓝" Red="-50" Green="-30" Blue="0" />
+	<ColorThemeRGB Name="RGB 水蓝" Red="0" Green="20" Blue="100" />
+	<ColorThemeRGB Name="RGB 古紫" Red="0" Green="-40" Blue="0" />
+	<ColorThemeRGB Name="RGB 玫紫" Red="100" Green="-20" Blue="50" />
+</ColorTheme>
+<!-- 色彩主题 End -->

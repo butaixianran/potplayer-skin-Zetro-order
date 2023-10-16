@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Skin Version="1.0" MinorVersion="1000" >
+    <MainSkinAreaOscFrame Image="Main.png" AlphaMode="3" UseWindowFrame="0" WidthLimit="265" HeightLimit="180" >
+        <Logo FileName="Logo.png" LoadingFileName="Loading.swf" />
+        #include<menu.xml>
+        <Control>
+            <Static Align="Top" Height="0" ImageWidth="20" ImageHeight="1" LeftMargin="3" RightMargin="3" UsingRgn="0" />
+            <Static Align="Bottom" Height="0" ImageTop="21" ImageWidth="20" ImageHeight="1" LeftMargin="3" RightMargin="14" AltImageTop="108" UsingRgn="0" />
+            <Static Align="Left" Width="0" ImageTop="0" ImageWidth="1" ImageHeight="20" TopMargin="2" BottomMargin="2" AltImageTop="0" UsingRgn="0" />
+            <Static Align="Right" Width="0" ImageLeft="19" ImageTop="0" ImageWidth="1" ImageHeight="20" TopMargin="2" BottomMargin="2" AltImageLeft="19" AltImageTop="0" UsingRgn="0" />
+            <Static Align="Right" Contain="CMD_PLAYLIST_TOGGLE" Width="1" ConstSize="200" >
+                <Static Align="Bottom" Height="35" ImageLeft="786" ImageTop="73" ImageWidth="11" ImageHeight="35" LeftMargin="2" RightMargin="2" UsingRgn="0" >
+                    <Button Tooltip="添加┃添加菜单" CmdID="ID_PLAYLIST_FILE_ADD" AltCmdID="CMD_POPUP_USER_MENU" AltUserMenuName="AddMenu" Left="-80" Top="-29" Width="25" Height="24" ImageLeft="583" ImageTop="161" />
+                    <Button Tooltip="移除┃移除菜单" CmdID="ID_PLAYLIST_DEL" AltCmdID="CMD_PLAYLIST_DEL" Left="-55" Top="-29" Width="25" Height="24" ImageLeft="694" ImageTop="161" />
+                    <Button Tooltip="清空" CmdID="ID_PLAYLIST_DEL_ALL" Left="-30" Top="-29" Width="25" Height="24" ImageLeft="694" ImageTop="191" />
+                </Static>
+            </Static>
+            <Static Align="Right" Contain="CMD_PLAYLIST_TOGGLE" Width="5" ImageLeft="745" ImageWidth="5" ImageHeight="16" TopMargin="2" BottomMargin="2" IsSplitter="1" MinSplitterSizeLT="250" MinSplitterSizeRB="200" >
+                <Button Tooltip="缩进列表" CmdID="CMD_PLAYLIST_WINDOW_CLOSE" Width="5" Height="55" ImageLeft="720" VertCenter="1" GetOffset="1" VisParentMinHeight="30" />
+            </Static>
+            <Static Align="Client" Contain="CMD_VIDEO_WINDOW" />
+        </Control>
+    </MainSkinAreaOscFrame>
+<!-- 首先是D3D模式，后面会补充普通模式 -->
+    <MainSkinAreaOscInside Image="Main.png" >
+        <Control>
+            <Static Align="Top" Height="23" ImageLeft="240" ImageTop="0" ImageWidth="10" ImageHeight="23" LeftMargin="4" RightMargin="4" IsTitleBar="1" AltImageLeft="0" AltImageTop="700" UsingRgn="0" >
+                <Button Tooltip="主菜单(同右键)" CmdID="CMD_MAIN_MENU" Left="6" Top="1" Width="69" Height="18" ImageLeft="23" ImageTop="355" />
+                <Label CmdID='CMD_TITLE_WITH_MESSAGE' Left='100' Top='3' Width='-135' Height='16' FontName="宋体" FontSize='12' FontBold='1' ColorX='171' ColorY='96' UsingScroll='1' ScrollDistance='1' ScrollInterval='60' HoriAlignment='1' />
+                <Button Tooltip="全屏┃前端显示" CmdID="CMD_FULL_WINDOW" AltCmdID="ID_ETC_NEXTONTOP" Left="-128" Top="0" Width="30" Height="15"  ImageLeft="98" ImageTop="64" />
+                <Button Tooltip="最小化" CmdID="ID_MINSCREEN"  Left="-98" Top="0" Width="30" Height="15" ImageLeft="0" ImageTop="23" />
+                <Button Tooltip="最大化" CmdID="CMD_MAX_WINDOW" Left="-68" Top="0" Width="30" Height="15" ImageLeft="0" ImageTop="43" />
+                <Button Tooltip="返回" CmdID="CMD_RESTORE_WINDOW"  Left="-68" Top="0" Width="30" Height="15" ImageLeft="0" ImageTop="64" />
+                <Button Tooltip="关闭" CmdID="ID_APP_EXIT" Left="-38" Top="0" Width="39" Height="15" ImageLeft="0" ImageTop="85" />
+            </Static>
+            <Static Align="Bottom" Height="55" ImageLeft="220" ImageTop="0" ImageWidth="10" ImageHeight="78" LeftMargin="2" RightMargin="2" UsingRgn="0" >
+                <Button Tooltip="减速播放┃速度复位" CmdID="ID_PLAY_SPEED_SLOWER" AltCmdID="ID_PLAY_SPEED_NORMAL" Left="6" Top="-53" Width="9" Height="8" ImageLeft="768" ImageTop="238" VisParentMinWidth="420"/>
+                <Button Tooltip="加速播放┃速度复位" CmdID="ID_PLAY_SPEED_FASTER" AltCmdID="ID_PLAY_SPEED_NORMAL" Left="-15" Top="-53" Width="9" Height="8" ImageLeft="768" ImageTop="250" VisParentMinWidth="420"/>
+                <Button Tooltip="参数设置┃控制面板" CmdID="ID_OPTION_WINDOW" AltCmdID="ID_CONTROL_BOX_WINDOW" Left="14" Top="-35" Width="17" Height="20" ImageLeft="0" ImageTop="106" />
+
+                <Slider Tooltip="定位" CmdID="CMD_TIMEBAR_CTRL" Left="20" Top="-54" Width="-20" Height="9"
+                           ImageLeft="0" ImageTop="330" ImageWidth="60" ImageHeight="9" LeftMargin="0" RightMargin="0" 
+                           AltImageLeft="0" AltImageTop="336"
+                           BackImageLeft="0" BackImageTop="336"
+                           ThumbImageLeft="0" ThumbImageTop="345" ThumbWidth="4" ThumbHeight="9"
+                           RepeatImageWidth="5" RepeatImageHeight="9"
+                           RepeatAImageLeft="13" RepeatAImageTop="345" RepeatBImageLeft="19" RepeatBImageTop="345"
+                           BookmarkImageLeft="25" BookmarkImageTop="345"
+                           SeamlessImageLeft="25" SeamlessImageTop="345" Cursor='1' />
+<!-- 播放时间 -->
+                    <Label CmdID="CMD_CURRENTTIME_MIN_MESSAGE" Left="45" Top="-32" Width="50" Height="12" FontName='宋体' FontBold='1' FontSize="12" ColorX="579" ColorY="95"  VisParentMaxWidth='671' VisParentMinWidth='350' />
+
+                    <Label  CmdID='CMD_CURRENTTIME_MESSAGE' ColorX='702' ColorY='10' Left='50' Top='-32' Width='60' HoriAlignment='1' Height='12' FontName='宋体' FontBold='1' FontSize='12' VisParentMinWidth="670" />
+                    <Button Tooltip="倒退30秒┃倒退1分钟" CmdID='ID_PLAYBACK_30SEC_BACK' AltCmdID='ID_PLAYBACK_1MIN_BACK' Left='50' Top='-32' Width='58' HoriAlignment='1' Height="9" Enabled='1' VisParentMinWidth="670" />
+
+                    <Label CmdID='' ColorX='710' ColorY='10' Left='106' Top='-32' Width='10' Height='16' HoriAlignment='1' FontName='宋体' FontBold='1' FontSize='12' Text='/' VisParentMinWidth="670" />
+
+                    <Label CmdID='CMD_TOTALTIME_MESSAGE' ColorX='704' ColorY='14' Left='111' Top='-32' Width='60' Height='12' HoriAlignment='1' FontName='宋体' FontBold='1' FontSize='12' VisParentMinWidth="670" />
+                    <Button Tooltip="上一帧┃下一帧" CmdID='ID_PLAY_PREV_FRAME' AltCmdID='ID_PLAY_NEXT_FRAME' Left='111' Top='-32' Width='58' Height="12" HoriAlignment='1' Enabled='1' VisParentMinWidth="670" />
+
+                    <Label CmdID='' ColorX='710' ColorY='10' Left='167' Top='-32' Width='10' Height='16' HoriAlignment='1' FontName='宋体' FontBold='1' FontSize='12' Text='/' VisParentMinWidth="670" />
+
+                    <Label  CmdID='CMD_LEFTTIME_MESSAGE' ColorX='702' ColorY='10' Left='172' Top='-32' Width='60' Height='12' HoriAlignment='1' FontName='宋体' FontBold='1' FontSize='12' VisParentMinWidth="670" />
+                    <Button Tooltip="快进30秒┃快进1分钟" CmdID='ID_PLAYBACK_30SEC_FORW' AltCmdID='ID_PLAYBACK_1MIN_FORW' Left='172' Top='-32' Width='58' Height="9" HoriAlignment='1' Enabled='1' VisParentMinWidth="670" />
+
+<!-- 解码信息 -->	
+<!-- 视频信息 -->
+                <!-- HoriAlignment='1'是width内区域的居中，HoriAlignment='2'是向width内区域的右靠 -->
+                <!-- <Label CmdID='CMD_VIDEO_OUT_FOURCC_MESSAGE' Left='-225' Top='-29' Width='40' Height='12' FontName='宋体' FontBold='1' FontSize='12' ColorX='704' ColorY='14' HoriCenter="1" VisParentMinWidth="960" />
+                <Label CmdID='CMD_VIDEO_CODEC_FOURCC_MESSAGE' Left='-185' Top='-29' Width='40' Height='12' FontName='宋体' FontBold='1' FontSize='12' ColorX='702' ColorY='10' HoriCenter="1" VisParentMinWidth="960" />
+                
+                <Label CmdID='CMD_VIDEO_CODEC_HEIGHT_MESSAGE' Left='-154' Top='-29' Width='32' Height='12' FontName='宋体' FontBold='1' FontSize='12' ColorX='702' ColorY='10' HoriAlignment='2' HoriCenter="1" VisParentMinWidth="960" />
+
+                <Label Text='P' CmdID='' Left='-134' Top='-29' Width='10' Height='12' FontName='宋体' FontBold='1' FontSize='12' ColorX='702' ColorY='10' HoriAlignment='0' HoriCenter="1" VisParentMinWidth="960" /> -->
+<!-- 音频信息 -->
+                <!-- <Label CmdID='CMD_AUDIO_CODEC_TYPE_MESSAGE' Left='180' Top='-30' Width='40' Height='12' FontName='宋体' FontBold='1' FontSize='12' ColorX='702' ColorY='10' HoriCenter="1" VisParentMinWidth="940" />
+
+                <Label CmdID='CMD_AUDIO_IN_SAMPLE_RATE_K_MESSAGE' Left='201' Top='-30' Width='30' Height='12' FontName='宋体' FontBold='1' FontSize='12' ColorX='702' ColorY='10' HoriAlignment='2' UsingScroll='0' ScrollDistance='0' ScrollInterval='0' HoriCenter="1" VisParentMinWidth="940" />
+                <Label Text='Hz' CmdID='' Left='223' Top='-30' Width='14' Height='12' FontName='宋体' FontBold='1' FontSize='12' ColorX='702' ColorY='10' HoriAlignment='0' UsingScroll='0' ScrollDistance='0' ScrollInterval='0' HoriCenter="1" VisParentMinWidth="940" /> -->
+<!-- 完整属性 -->
+                <Button Tooltip='OSD信息┃播放信息' CmdID='ID_PLAYINFO_OSD' AltCmdID='ID_PLAYINFO_WINDOW' Left="-99" Top="-33" Width="15" Height="15" ImageLeft="100" ImageTop="270" HoriCenter='1' VisParentMinWidth='450' />
+
+<!-- 音频虚拟视效 -->
+                <!-- <Visual Left='204' Top='23' Width='88' Height='16' BarWidth='2'  BarDistance='2' BackColor='0x0000FF'  BarStartColor='0x99FFFF' BarEndColor='0xEE5800' RefReshTime='20'  LineDivide='2' OscColor='0xEE5800'  Peakcolor='0xFFE7CE' PeakHeight='1' PeakFallDistance='2' PeakFallTime='1000' VisParentMinWidth='570' HoriCenter="1" /> -->
+
+<!-- 右下角按钮 -->
+
+<!-- 3D视频 -->
+                <Button Tooltip="3D┃360°VR" CmdID="CMD_POPUPMENU_VIDEO_3D" AltCmdID='CMD_POPUPMENU_VIDEO_360VR' Left="-175" Top="-30" Width="15" Height="15" ImageLeft="100" ImageTop="285" VisParentMinWidth='660' />
+
+<!-- 皮肤控制 -->
+                <Button Tooltip="隐藏皮肤┃非D3D皮肤" CmdID="ID_SKIN_AUTO_HIDE" AltCmdID='ID_SKIN_OSC_NONE' Left="-150" Top="-30" Width="15" Height="15" ImageLeft="50" ImageTop="285" VisParentMinWidth='610' />
+<!-- 播放类型 -->
+                <Button Tooltip="随机┃收藏" CmdID="ID_PLAYBACK_SHUFFLE" AltCmdID='CMD_POPUPMENU_FAVORITE' Left="-125" Top="-30" Width="15" Height="15" ImageLeft="50" ImageTop="270" VisParentMinWidth='560' />
+
+                <Button Tooltip="循环┃截图文件夹" CmdID="ID_PLAYBACK_REPEAT" AltCmdID='ID_VIDEO_OPEN_FOLDER' Left="-100" Top="-30" Width="15" Height="15" ImageLeft="0" ImageTop="270" VisParentMinWidth='560' />
+<!-- A-B循环 -->
+                <Label CmdID='' ColorX='702' ColorY='10' Left='-75' Top='-28' Width='9' Height='14' FontName='宋体' FontBold='1' FontSize='12' Text='A' VisParentMinWidth="450" />
+                <Button Tooltip='循环起点┃上下翻转' CmdID='ID_PLAY_REPEAT_START_SET' AltCmdID='ID_VIDEO_V_FLIP' Left='-75' Top='-28' Width='7' Height='9' Enabled='1' VisParentMinWidth="450" />
+
+                <Label CmdID='' ColorX='702' ColorY='10' Left='-62' Top='-29' Width='13' Height='14' FontName='宋体' FontBold='1' FontSize='14' Text='∞' VisParentMinWidth="450" />
+                <Button Tooltip='解除循环┃旋转画面' CmdID='ID_PLAY_REPEAT_RESET' AltCmdID='ID_VIDEO_ROTATE_CYCLE' Left='-62' Top='-29' Width='11' Height='14' Enabled='1' VisParentMinWidth="450" />
+
+                <Label CmdID='' ColorX='702' ColorY='10' Left='-44' Top='-28' Width='8' Height='14' FontName='宋体' FontBold='1' FontSize='12' Text='B' VisParentMinWidth="450" />
+                <Button Tooltip='循环终点┃左右翻转' CmdID='ID_PLAY_REPEAT_STOP_SET' AltCmdID='ID_VIDEO_H_FLIP' Left='-44' Top='-28' Width='6' Height='9' Enabled='1' VisParentMinWidth="450" />
+
+<!-- 播放列表 -->
+                <Button Tooltip="播放列表┃字幕" CmdID="ID_PLAYLIST_WINDOW" AltCmdID="ID_CAPTION_SELECT_MENU" Left="-28" Top="-30" Width="18" Height="16" ImageLeft="0" ImageTop="300" />
+
+<!-- 中间主按钮 -->
+                <Button Tooltip="截屏┃截屏为..." CmdID="ID_VIDEO_IMAGE_CAPTURE" AltCmdID='ID_VIDEO_IMAGE_CAPTURE_PROMPT' Left="-74" Top="-33" Width="15" Height="15" ImageLeft="0" ImageTop="285" HoriCenter='1' />
+
+                <Button Tooltip="倒退5秒┃上一文件" CmdID="ID_PLAYBACK_5SEC_BACK" AltCmdID="ID_PROCESS_PREV" Left="-44" Top="-37" Width="25" Height="25" ImageTop="245"  HoriCenter="1" />
+                <Button Tooltip="播放┃打开首选类型" CmdID="CMD_MEDIA_PLAY" AltCmdID="ID_BASE_OPEN" Left="0" Top="-42" Width="35" Height="35" ImageTop="150" HoriCenter="1" />
+
+                <Button Tooltip="暂停┃停止" CmdID="CMD_MEDIA_PAUSE" AltCmdID="CMD_MEDIA_CLOSE" Left="0" Top="-42" Width="35" Height="35" ImageTop="185"  HoriCenter="1" />
+                <Button Tooltip="快进5秒┃下一文件" CmdID="ID_PLAYBACK_5SEC_FORW" AltCmdID="ID_PROCESS_NEXT" Left="44" Top="-37" Width="25" Height="25" ImageTop="220"  HoriCenter="1" />
+
+                <Button Tooltip="静音┃声道" CmdID="ID_AUDIO_MUTE" AltCmdID="ID_AUDIO_SELECT_MENU" DownFlag="1" Left="81" Top="-32" Width="19" Height="16" ImageLeft="0" ImageTop="315" HoriCenter="1" />
+                <Slider Tooltip="音量" CmdID="CMD_VOLUME_CTRL" Left="120" Top="-28" Width="50" Height="9" ImageWidth="60" ImageHeight="9" ImageLeft="0" ImageTop="330" ThumbWidth="4" ThumbHeight="9" ThumbImageLeft="0" ThumbImageTop="345"  BackImageLeft="0" BackImageTop="336"  LeftMargin="0" RightMargin="0" HoriCenter='1' VisParentMinWidth='402' />
+            </Static>
+        </Control>
+    </MainSkinAreaOscInside>
+<!-- 以上是D3D模式，以下是普通模式 -->
+    <MainSkinArea Image="Main.png" AlphaMode="1" UseWindowFrame="0" WidthLimit="320" HeightLimit="200" >
+        <Logo FileName="Logo.png" LoadingFileName="Loading.swf" />
+        #include<menu.xml>
+        <Control>
+            <Static Align="Top" Height="0" ImageWidth="20" ImageHeight="1" LeftMargin="3" RightMargin="3" UsingRgn="0" />
+            <Static Align="Bottom" Height="0" ImageTop="21" ImageWidth="20" ImageHeight="1" LeftMargin="3" RightMargin="14" AltImageTop="108" UsingRgn="0" />
+            <Static Align="Left" Width="0" ImageTop="0" ImageWidth="1" ImageHeight="20" TopMargin="2" BottomMargin="2" AltImageTop="0" UsingRgn="0" />
+            <Static Align="Right" Width="0" ImageLeft="19" ImageTop="0" ImageWidth="1" ImageHeight="20" TopMargin="2" BottomMargin="2" AltImageLeft="19" AltImageTop="0" UsingRgn="0" />
+            <Static Align="Top" IsTitleBar="1" Height="22" ImageLeft="0" ImageTop="355" ImageWidth="19" ImageHeight="10" LeftMargin="4" RightMargin="4" UsingRgn="0" >
+                <Button Tooltip="主菜单(同右键)" CmdID="CMD_MAIN_MENU" Left="6" Top="1" Width="69" Height="18" ImageLeft="23" ImageTop="355" />
+                <Label CmdID='CMD_TITLE_WITH_MESSAGE' Left='100' Top='3' Width='-135' Height='16' FontName='Tahoma' FontSize='12' FontBold='1' ColorX='171' ColorY='96' UsingScroll='1' ScrollDistance='1' ScrollInterval='60' HoriAlignment='1' />
+                <Button Tooltip="全屏┃前端显示" CmdID="CMD_FULL_WINDOW" AltCmdID="ID_ETC_NEXTONTOP" Left="-128" Top="0" Width="30" Height="15"  ImageLeft="98" ImageTop="64" />
+                <Button Tooltip="最小化" CmdID="ID_MINSCREEN"  Left="-98" Top="0" Width="30" Height="15" ImageLeft="0" ImageTop="23" />
+                <Button Tooltip="最大化" CmdID="CMD_MAX_WINDOW" Left="-68" Top="0" Width="30" Height="15" ImageLeft="0" ImageTop="43" />
+                <Button Tooltip="返回" CmdID="CMD_RESTORE_WINDOW"  Left="-68" Top="0" Width="30" Height="15" ImageLeft="0" ImageTop="64" />
+                <Button Tooltip="关闭" CmdID="ID_APP_EXIT" Left="-38" Top="0" Width="39" Height="15" ImageLeft="0" ImageTop="85" />
+            </Static>
+            <Static Align="Bottom" Height="55" ImageLeft="200" ImageTop="0" ImageWidth="10" ImageHeight="150" LeftMargin="2" RightMargin="2" UsingRgn="0" >
+                <Button Tooltip="减速播放┃速度复位" CmdID="ID_PLAY_SPEED_SLOWER" AltCmdID="ID_PLAY_SPEED_NORMAL" Left="6" Top="-53" Width="9" Height="8" ImageLeft="768" ImageTop="238" VisParentMinWidth="420"/>
+                <Button Tooltip="加速播放┃速度复位" CmdID="ID_PLAY_SPEED_FASTER" AltCmdID="ID_PLAY_SPEED_NORMAL" Left="-15" Top="-53" Width="9" Height="8" ImageLeft="768" ImageTop="250" VisParentMinWidth="420"/>
+                <Button Tooltip="参数设置┃控制面板" CmdID="ID_OPTION_WINDOW" AltCmdID="ID_CONTROL_BOX_WINDOW" Left="13" Top="-35" Width="17" Height="20" ImageLeft="0" ImageTop="106"/>
+
+<!-- 进度条 -->
+                <Slider Tooltip="定位" CmdID="CMD_TIMEBAR_CTRL" Left="20" Top="-54" Width="-20" Height="9"
+                       ImageLeft="0" ImageTop="330" ImageWidth="60" ImageHeight="9" LeftMargin="0" RightMargin="0" 
+                       AltImageLeft="0" AltImageTop="336"
+                       BackImageLeft="0" BackImageTop="336"
+                       ThumbImageLeft="0" ThumbImageTop="345" ThumbWidth="4" ThumbHeight="9"
+                       RepeatImageWidth="5" RepeatImageHeight="9"
+                       RepeatAImageLeft="13" RepeatAImageTop="345" RepeatBImageLeft="19" RepeatBImageTop="345"
+                       BookmarkImageLeft="25" BookmarkImageTop="345"
+                       SeamlessImageLeft="25" SeamlessImageTop="345" Cursor='1' />
+
+<!-- 播放时间 -->
+                <Label CmdID="CMD_CURRENTTIME_MIN_MESSAGE" Left="45" Top="-32" Width="50" Height="12" FontName="Tahoma" FontSize="12" ColorX="579" ColorY="95"  VisParentMaxWidth='671' VisParentMinWidth='350' />
+
+                <Label  CmdID='CMD_CURRENTTIME_MESSAGE' ColorX='702' ColorY='10' Left='50' Top='-32' Width='60' HoriAlignment='1' Height='12' FontName='Tahoma' FontSize='12' VisParentMinWidth="670" />
+                <Button Tooltip="倒退30秒┃倒退1分钟" CmdID='ID_PLAYBACK_30SEC_BACK' AltCmdID='ID_PLAYBACK_1MIN_BACK' Left='50' Top='-32' Width='58' HoriAlignment='1' Height="9" Enabled='1' VisParentMinWidth="670" />
+
+                <Label CmdID='' ColorX='710' ColorY='10' Left='106' Top='-32' Width='10' Height='16' HoriAlignment='1' FontName='Tahoma' FontSize='12' Text='/' VisParentMinWidth="670" />
+
+                <Label CmdID='CMD_TOTALTIME_MESSAGE' ColorX='710' ColorY='10' Left='111' Top='-32' Width='60' Height='12' HoriAlignment='1' FontName='Tahoma' FontSize='12' VisParentMinWidth="670" />
+                <Button Tooltip="上一帧┃下一帧" CmdID='ID_PLAY_PREV_FRAME' AltCmdID='ID_PLAY_NEXT_FRAME' Left='111' Top='-32' Width='58' Height="12" HoriAlignment='1' Enabled='1' VisParentMinWidth="670" />
+
+                <Label CmdID='' ColorX='710' ColorY='10' Left='167' Top='-32' Width='10' Height='16' HoriAlignment='1' FontName='Tahoma' FontSize='12' Text='/' VisParentMinWidth="670" />
+
+                <Label  CmdID='CMD_LEFTTIME_MESSAGE' ColorX='702' ColorY='10' Left='172' Top='-32' Width='60' Height='12' HoriAlignment='1' FontName='Tahoma' FontSize='12' VisParentMinWidth="670" />
+                <Button Tooltip="快进30秒┃快进1分钟" CmdID='ID_PLAYBACK_30SEC_FORW' AltCmdID='ID_PLAYBACK_1MIN_FORW' Left='172' Top='-32' Width='58' Height="9" HoriAlignment='1' Enabled='1' VisParentMinWidth="670" />
+
+<!-- 解码信息 -->
+<!-- 视频信息 -->
+                <!-- HoriAlignment='1'是width内区域的居中，HoriAlignment='2'是向width内区域的右靠 -->
+                <!-- <Label CmdID='CMD_VIDEO_OUT_FOURCC_MESSAGE' Left='-225' Top='-29' Width='40' Height='12' FontName='宋体' FontBold='1' FontSize='12' ColorX='704' ColorY='14' HoriCenter="1" VisParentMinWidth="960" />
+                <Label CmdID='CMD_VIDEO_CODEC_FOURCC_MESSAGE' Left='-185' Top='-29' Width='40' Height='12' FontName='宋体' FontBold='1' FontSize='12' ColorX='702' ColorY='10' HoriCenter="1" VisParentMinWidth="960" />
+                
+                <Label CmdID='CMD_VIDEO_CODEC_HEIGHT_MESSAGE' Left='-154' Top='-29' Width='32' Height='12' FontName='宋体' FontBold='1' FontSize='12' ColorX='702' ColorY='10' HoriAlignment='2' HoriCenter="1" VisParentMinWidth="960" />
+
+                <Label Text='P' CmdID='' Left='-134' Top='-29' Width='10' Height='12' FontName='宋体' FontBold='1' FontSize='12' ColorX='702' ColorY='10' HoriAlignment='0' HoriCenter="1" VisParentMinWidth="960" /> -->
+<!-- 音频信息 -->
+                <!-- <Label CmdID='CMD_AUDIO_CODEC_TYPE_MESSAGE' Left='180' Top='-30' Width='40' Height='12' FontName='宋体' FontBold='1' FontSize='12' ColorX='702' ColorY='10' HoriCenter="1" VisParentMinWidth="940" />
+
+                <Label CmdID='CMD_AUDIO_IN_SAMPLE_RATE_K_MESSAGE' Left='201' Top='-30' Width='30' Height='12' FontName='宋体' FontBold='1' FontSize='12' ColorX='702' ColorY='10' HoriAlignment='2' UsingScroll='0' ScrollDistance='0' ScrollInterval='0' HoriCenter="1" VisParentMinWidth="940" />
+                <Label Text='Hz' CmdID='' Left='223' Top='-30' Width='14' Height='12' FontName='宋体' FontBold='1' FontSize='12' ColorX='702' ColorY='10' HoriAlignment='0' UsingScroll='0' ScrollDistance='0' ScrollInterval='0' HoriCenter="1" VisParentMinWidth="940" /> -->
+
+<!-- 完整属性 -->
+                <Button Tooltip='OSD信息┃播放信息' CmdID='ID_PLAYINFO_OSD' AltCmdID='ID_PLAYINFO_WINDOW' Left="-99" Top="-33" Width="15" Height="15" ImageLeft="100" ImageTop="270" HoriCenter='1' VisParentMinWidth='450' />
+
+<!-- 音频虚拟视效 -->
+                <!-- <Visual Left='204' Top='23' Width='88' Height='16' BarWidth='2'  BarDistance='2' BackColor='0x0000FF'  BarStartColor='0x99FFFF' BarEndColor='0xEE5800' RefReshTime='20'  LineDivide='2' OscColor='0xEE5800'  Peakcolor='0xFFE7CE' PeakHeight='1' PeakFallDistance='2' PeakFallTime='1000' VisParentMinWidth='570' HoriCenter="1" /> -->
+<!-- 右下角功能按钮 -->
+
+                <Button Tooltip="3D┃360°VR" CmdID="CMD_POPUPMENU_VIDEO_3D" AltCmdID='CMD_POPUPMENU_VIDEO_360VR' Left="-175" Top="-30" Width="15" Height="15" ImageLeft="100" ImageTop="285" VisParentMinWidth='660' />
+
+                <Button Tooltip="隐藏皮肤┃D3D皮肤" CmdID="ID_SKIN_AUTO_HIDE" AltCmdID='ID_SKIN_OSC_3D' Left="-150" Top="-30" Width="15" Height="15" ImageLeft="50" ImageTop="285" VisParentMinWidth='610' />
+
+                <Button Tooltip="随机┃收藏" CmdID="ID_PLAYBACK_SHUFFLE" AltCmdID='CMD_POPUPMENU_FAVORITE' Left="-125" Top="-30" Width="15" Height="15" ImageLeft="50" ImageTop="270" VisParentMinWidth='560' />
+
+                <Button Tooltip="循环┃截图文件夹" CmdID="ID_PLAYBACK_REPEAT" AltCmdID='ID_VIDEO_OPEN_FOLDER' Left="-100" Top="-30" Width="15" Height="15" ImageLeft="0" ImageTop="270" VisParentMinWidth='560' />
+
+<!-- A-B循环 -->
+                <Label CmdID='' ColorX='702' ColorY='10' Left='-75' Top='-30' Width='9' Height='14' FontName='Tahoma' FontSize='12' Text='A' VisParentMinWidth="450" />
+                <Button Tooltip='循环起点┃上下翻转' CmdID='ID_PLAY_REPEAT_START_SET' AltCmdID='ID_VIDEO_V_FLIP' Left='-75' Top='-30' Width='7' Height='9' Enabled='1' VisParentMinWidth="450" />
+
+                <Label CmdID='' ColorX='702' ColorY='10' Left='-62' Top='-32' Width='13' Height='14' FontName='Tahoma' FontSize='14' HoriAlignment='1' Text='∞' VisParentMinWidth="450" />
+                <Button Tooltip='解除循环┃旋转画面' CmdID='ID_PLAY_REPEAT_RESET' AltCmdID='ID_VIDEO_ROTATE_CYCLE' Left='-62' Top='-32' Width='14' Height='14' Enabled='1' VisParentMinWidth="450" />
+
+                <Label CmdID='' ColorX='702' ColorY='10' Left='-44' Top='-30' Width='8' Height='14' FontName='Tahoma' FontSize='12' Text='B' VisParentMinWidth="450" />
+                <Button Tooltip='循环终点┃左右翻转' CmdID='ID_PLAY_REPEAT_STOP_SET' AltCmdID='ID_VIDEO_H_FLIP' Left='-44' Top='-30' Width='6' Height='9' Enabled='1' VisParentMinWidth="450" />
+
+<!-- 播放列表 -->
+                <Button Tooltip="播放列表┃字幕" CmdID="ID_PLAYLIST_WINDOW" AltCmdID="ID_CAPTION_SELECT_MENU" Left="-28" Top="-30" Width="18" Height="16" ImageLeft="0" ImageTop="300" />
+<!-- 中间主按钮 -->
+                <Button Tooltip="截屏┃截屏为..." CmdID="ID_VIDEO_IMAGE_CAPTURE" AltCmdID='ID_VIDEO_IMAGE_CAPTURE_PROMPT' Left="-74" Top="-33" Width="15" Height="15" ImageLeft="0" ImageTop="285" HoriCenter="1" />
+
+                <Button Tooltip="倒退5秒┃上一文件" CmdID="ID_PLAYBACK_5SEC_BACK" AltCmdID="ID_PROCESS_PREV" Left="-44" Top="-37" Width="25" Height="25" ImageTop="245"  HoriCenter="1" />
+                <Button Tooltip="播放┃打开首选类型" CmdID="CMD_MEDIA_PLAY" AltCmdID="ID_BASE_OPEN" Left="0" Top="-42" Width="35" Height="35" ImageTop="150" HoriCenter="1" />
+                
+                <Button Tooltip="暂停┃停止" CmdID="CMD_MEDIA_PAUSE" AltCmdID="CMD_MEDIA_CLOSE" Left="0" Top="-42" Width="35" Height="35" ImageTop="185"  HoriCenter="1" />
+                <Button Tooltip="快进5秒┃下一文件" CmdID="ID_PLAYBACK_5SEC_FORW" AltCmdID="ID_PROCESS_NEXT" Left="44" Top="-37" Width="25" Height="25" ImageTop="220"  HoriCenter="1" />
+                
+                <Button Tooltip="静音┃声道" CmdID="ID_AUDIO_MUTE" AltCmdID="ID_AUDIO_SELECT_MENU" DownFlag="1" Left="81" Top="-32" Width="19" Height="16" ImageLeft="0" ImageTop="315" HoriCenter="1" />
+                <Slider Tooltip="音量" CmdID="CMD_VOLUME_CTRL" Left="120" Top="-28" Width="50" Height="9" ImageWidth="60" ImageHeight="9" ImageLeft="0" ImageTop="330" ThumbWidth="4" ThumbHeight="9" ThumbImageLeft="0" ThumbImageTop="345"  BackImageLeft="0" BackImageTop="336"  LeftMargin="0" RightMargin="0" HoriCenter='1' VisParentMinWidth='402' />
+            </Static>
+            <Static Align="Right" Contain="CMD_PLAYLIST_TOGGLE" Width="1" ConstSize="260" >
+                <Static Align="Bottom" Height="35" ImageLeft="786" ImageTop="73" ImageWidth="11" ImageHeight="35" LeftMargin="2" RightMargin="2" UsingRgn="0" >
+                    <Button Tooltip="添加┃添加菜单" CmdID="ID_PLAYLIST_FILE_ADD" AltCmdID="CMD_POPUP_USER_MENU" AltUserMenuName="AddMenu" Left="-80" Top="-29" Width="25" Height="24" ImageLeft="583" ImageTop="161" />
+                    <Button Tooltip="移除┃移除菜单" CmdID="ID_PLAYLIST_DEL" AltCmdID="CMD_PLAYLIST_DEL" Left="-55" Top="-29" Width="25" Height="24" ImageLeft="694" ImageTop="161" />
+                    <Button Tooltip="清空" CmdID="ID_PLAYLIST_DEL_ALL" Left="-30" Top="-29" Width="25" Height="24" ImageLeft="694" ImageTop="191" />
+                </Static>
+            </Static>
+            <Static Align="Right" Contain="CMD_PLAYLIST_TOGGLE" Width="5" ImageLeft="745" ImageWidth="5" ImageHeight="16" TopMargin="2" BottomMargin="2" IsSplitter="1" MinSplitterSizeLT="250" MinSplitterSizeRB="200" >
+                <Button Tooltip="缩进列表" CmdID="CMD_PLAYLIST_WINDOW_CLOSE" Width="5" Height="55" ImageLeft="720" VertCenter="1" GetOffset="1" VisParentMinHeight="30" />
+            </Static>
+            <Static Align="Client" Contain="CMD_VIDEO_WINDOW" />
+        </Control>
+    </MainSkinArea>
+    <WindowSkinArea Image="Window.png" UseWindowFrame="2">
+        <Common>
+            <BtnPosition Left="0" Top="258" Width="58" Height="19" />
+            <AltBtnPosition Left="0" Top="283" Width="58" Height="19" />
+            <TabPosition Left="239" Top="283" Width="76" Height="20" />
+            <TabTextColor Left="578" Top="298" />
+            <WindowType0 Left="0" Top="314" Width="307" Height="147" LeftDrawMargin="12" TopDrawMargin="95" RightDrawMargin="200" BottomDrawMargin="48" BottomMargin="33" LeftSkinMargin="5" TopSkinMargin="28" RightSkinMargin="5" BottomSkinMargin="5" FontName="Tahoma" FontSize="8" FontPosLeft="10" FontPosTop="7" FontColorLeft="5" FontColorTop="163" FontColorAltLeft="16" FontColorAltTop="163" />
+            <WindowType1 Left="0" Top="477" Width="307" Height="147" LeftDrawMargin="12" TopDrawMargin="95" RightDrawMargin="200" BottomDrawMargin="48" TopMargin="25" BottomMargin="33" LeftSkinMargin="5" TopSkinMargin="28" RightSkinMargin="5" BottomSkinMargin="5" FontName="Tahoma" FontSize="8" FontPosLeft="10" FontPosTop="7" FontColorLeft="5" FontColorTop="163" FontColorAltLeft="16" FontColorAltTop="163" />
+            <WindowType2 Left="0" Top="645" Width="307" Height="147" LeftDrawMargin="12" TopDrawMargin="95" RightDrawMargin="200" BottomDrawMargin="48" LeftSkinMargin="5" TopSkinMargin="28" RightSkinMargin="5" BottomSkinMargin="5" FontName="Tahoma" FontSize="8" FontPosLeft="10" FontPosTop="7" FontColorLeft="5" FontColorTop="163" FontColorAltLeft="16" FontColorAltTop="163" />
+            <CloseBtn Left="179" Top="18" Width="11" Height="9" PosX="-19" PosY="10" />
+            <AboutIcon Left="0" Top="1192" Width="45" Height="47" PosX="30" PosY="80" />
+            <AboutQuery Left="0" Top="1248" Width="45" Height="16" />
+            <LoginTitle Left="0" Top="946" Width="33" Height="13" />
+            <LoginFindBtn Left="0" Top="63" Width="95" Height="13" />
+            <LoginFindMark Left="0" Top="1180" Width="10" Height="10" />
+            <LoginLogo Left="0" Top="975" Width="230" Height="34" />
+            <LoginInfo Left="0" Top="1027" Width="284" Height="19" />
+            <LoginError Left="325" Top="1027" Width="202" Height="19" />
+            <LoginBtn Left="0" Top="1063" Width="79" Height="54" />
+            <LoginNewBtn Left="0" Top="45" Width="39" Height="13" />
+            <LoginNewMark Left="0" Top="32" Width="4" Height="10" />
+            <MessageColorPos Left="3" Top="1276" />
+            <MessageIconType0 Left="0" Top="1144" Width="33" Height="28" />
+            <MessageIconType1 Left="44" Top="1144" Width="28" Height="28" />
+            <MessageIconType2 Left="86" Top="1144" Width="28" Height="28" />
+            <MessageIconType3 Left="129" Top="1144" Width="28" Height="28" />
+            <MessageGrade15 Left="305" Top="1165" Width="76" Height="77" />
+            <MessageGrade18 Left="464" Top="1165" Width="76" Height="77" />
+            <MessageGrade19 Left="384" Top="1165" Width="76" Height="77" />
+            <MessageGradeNone Left="539" Top="1165" Width="76" Height="77" />
+            <AutoUpdateLogo Left="227" Top="812" Width="297" Height="34" PosX="5" PosY="28" />
+        </Common>
+    </WindowSkinArea>
+    #include<common.xml>
+</Skin>
